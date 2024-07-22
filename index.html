@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input placeholder="Digite O nome do Usuario">
+    <p></p>
+    <button onclick="search()">Procurar Contato</button>
+</body>
+<script>
+
+let p = document.querySelector('p');
+let input = document.querySelector ('input')
+
+const contacts = [
+    { name: 'Ana', number:'(31) 98648-3636'},
+    { name: 'Thais', number:'(31) 98670-4936'},
+    { name: 'Carolina', number:'(31) 99948-3602'},
+    { name: 'Luiz', number:'(31) 97548-1234'},
+]
+
+    function search() {
+        
+        for(const contact of contacts){
+        
+        if(input.value.toLowerCase() === contact.name.toLowerCase()) {
+
+            p.innerHTML = `Contato Encotrado Nome:${contact.name} Tel: ${contact.number}`
+
+            break
+        }else{
+            p.innerHTML = "Contato nao encotrado,tente novamente"
+        }
+
+       
+    }
+    }
+    
+</script>
+</html>
